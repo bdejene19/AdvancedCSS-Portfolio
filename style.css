@@ -12,6 +12,7 @@ body {
     line-height: 1.3;
 }
 
+/* smooth scroll when pressing links in nav bar */
 html {
     scroll-behavior: smooth;;
 
@@ -24,13 +25,11 @@ h1 {
 
 h2 {
     font-size: 2rem;
-
 }
 
 h3 {
     font-size: 1.75rem;
 }
-
 
 /* beginning of header styling */
 
@@ -40,30 +39,32 @@ nav {
     display: flex;
     flex-direction: row;
     color: white;
+    /* linear gradient to get blend type color */
     background-image: linear-gradient(rgb(185, 180, 180) 0%, var(--tertiary-color));
-    /* justify-content: center; */
+
+    /* padding top/bottom left/right */
     padding: 1em 0;
 }
 
 
-/* nav-bar name placeholder */
+/* navbar split into .nav-name and .nav-list-items containers */
 .nav-name {
     flex: 1 1 50%;
     text-align: left;
 }
 
+/* style h2 tag containing my name */
 .nav-name h2 {
-    
     width: 55%;
     padding: 0.5em 0;
     padding-left: 2em;
-    /* margin-left: -9em; */
     background-color: rgb(14, 99, 40);
 }
 
 /* nav-bar buttons container */
 .nav-list-items {
     flex:1 1 45%;
+    padding-right: 3em;
 }
 
 /* set nav buttons in row => give general styling as well */
@@ -72,7 +73,10 @@ ul {
     flex-direction: row;
     width: 100%;
     list-style: none;
+    /* gaps between column */
     column-gap: 3em;
+
+    /* aligning list items in ul */
     align-items: center;
     text-align: center;
 }
@@ -86,11 +90,13 @@ li {
     border-bottom: solid white 3px;
 }
 
+/* navbar links will use li underline instead of natural text-decoration */
 a {
     text-decoration: none;
     color: inherit;
 }
 
+/* footer links will be underlined on hover */
 footer a:hover {
     text-decoration: underline;
 }
@@ -244,7 +250,7 @@ footer p {
 
 /* media queries for resizing layout */
 @media screen and (max-width: 1000px) {
-    /** resising width .nav-name and h2 tag with my name in it */
+    /** resising width distributions in navbar */
     .nav-name {
         flex-basis: 45%;
     }
@@ -252,12 +258,14 @@ footer p {
         width: 65%;
     }
 
+    /* resize card widths of projects */
     article > a {
-        flex: 1 1 10em;
+        flex: 1 1 12em;
     }
 }
 
 @media screen and (max-width: 830px) {
+    /* make each project cover entire row */
     article > a {
         flex: 1 1 100%;
     }
@@ -265,20 +273,23 @@ footer p {
     /* set caption and content in column (e.g. Work, sample projects) */
     section {
         flex-direction: column;
+        /* since in column now => create row gap  */
         row-gap: 2em;
     }
 
+    /* redistribution of navbar content */
+    /* name half will only take up 30% of full width */
     .nav-name {
         flex-basis: 30%;
         
     }
 
     .nav-name h2 {
-        /* width: 80%; */
         padding-left: 1em
 
     }
 
+    /* remove navbar links for smooth scroll effect on smaller screens */
     .nav-list-items {
         display: none;
     }
@@ -296,24 +307,29 @@ footer p {
         padding-left: 0.5em;
     }
 
+    /* allow last project card to be full width as well */
     article > a:last-child {
         flex-grow: 1;
     }
+
+    /* chaing main and footer content padding */
     main,footer {
         padding: 1.5em;
     }
 
+    /* change flex of footer p's that have links  */
     footer p {
-        /* border: solid pink 10px; */
         flex: 1 1 10em;;
     }
 }
 
 @media screen and (max-width: 435px) {
+    /* change padding for mobile devices */
     main,footer {
         padding: 0.75em;
     }
 
+    /* change footer paragaraph content flex */
     footer p {
         flex: 1 1 100%;
     }
