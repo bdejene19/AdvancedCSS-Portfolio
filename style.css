@@ -1,0 +1,238 @@
+/* define reusable colors */
+:root {
+    --main-color: rgb(44, 164, 164);
+    --secondary-color: rgb(73, 59, 126);
+    --tertiary-color: rgb(87, 87, 87); 
+}
+
+/* create general webpage display */
+body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+html {
+    scroll-behavior: smooth;;
+
+}
+
+/* general font-size scheme */
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+
+/* beginning of header styling */
+
+/* determine navbar display => row flex */
+/* defining general container info => bg color, padding, etc. */
+nav {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-image: linear-gradient(rgb(185, 180, 180) 0%, var(--tertiary-color));
+    /* justify-content: center; */
+    padding: 1em 0;
+}
+
+
+/* nav-bar name placeholder */
+.nav-name {
+    flex-basis: 50%;
+    text-align: left;
+}
+
+.nav-name h2 {
+    
+    width: 55%;
+    padding: 0.5em 0;
+    padding-left: 2em;
+    /* margin-left: -9em; */
+    background-color: rgb(14, 99, 40);
+}
+
+/* nav-bar buttons container */
+.nav-list-items {
+    flex-basis: 45%;
+}
+
+/* set nav buttons in row => give general styling as well */
+ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style: none;
+    column-gap: 3em;
+    align-items: center;
+    text-align: center;
+}
+
+/* defining list item size and width => also given a border-bottom */
+li {
+    flex: 1 1 15em;
+    font-size: 1.35rem;
+    padding: 0.25em;
+    width: max-content;
+    border-bottom: solid white 3px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* end header styling */
+
+/* beginning main content styling */
+/* create main content layout => about me, work, contact */
+main, footer {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    row-gap: 2em;
+}
+
+/* general page layout of each section => want caption and content to be inline in a row*/
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  /** flex-wrap to put title above content when needed (i.e. column direction)*/
+
+    /* aligning content */
+    column-gap: 3em;  
+}
+
+/* caption => will be smaller container than content for caption (e.g. About me title vs About me content */
+
+
+#about article:last-child {
+    font-size: 1.5rem;
+}
+
+/* main content will be a majority of webpage width */
+article {
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 1em;
+    column-gap: 1em;
+    
+}
+
+
+.uneven-flex {
+    flex-basis: 20%;
+    border-right: solid var(--secondary-color) 3px;
+    color: var(--secondary-color);
+    padding-right: 2em;
+}
+
+.uneven-content {
+    flex-basis: 70%;
+}
+
+.uneven-content > a {
+    flex: 1 1 49%;
+    justify-content: left;
+    
+}
+
+.uneven-content > div:last-child {
+    flex-basis: 45%;
+    border: solid green 5px;
+}
+
+.uneven-content .sub-header {
+    text-align: center;
+    flex-basis: 1 1 10em;
+}
+
+article a:first-child {
+    flex-basis: 100%;
+}
+
+article h1 {
+    width: 100%;
+    text-align: right;
+}
+article > a {
+    height: 50vh;
+    opacity: 0.5;
+    transition: 0.3s linear;
+    border: solid var(--main-color) 0.5em;
+    
+    color: white;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    
+
+}
+
+article > a:nth-child(1) {
+    background-image: url('./Assets/expcon.png');
+   
+}
+
+article > a:nth-child(2) {
+    background-image: url('./Assets/portfolio.png'); 
+}
+
+article > a:nth-child(3) {
+    background-image: url('./Assets/dm.png');
+   
+}
+
+article > a:last-of-type {
+    border: solid pink 3px;
+    flex-grow: 0;
+}
+
+article > a:hover {
+    opacity: 0.9;
+  
+
+}
+
+div div {
+    background-color: rgb(44, 164, 164);
+    padding: 0.5em 1em;
+    margin-top: 17em;
+    width: fit-content;
+    justify-self: center;
+}
+
+/* end main content styling */
+
+/* footer styling */
+footer {
+    padding-top: 0;
+}
+
+footer .uneven-content {
+    padding: 0;
+    column-gap: 0;
+}
+
+footer p {
+    flex: 1 1 5em;
+    font-size: 1.2rem;
+    width: max-content;
+}
+
+
