@@ -48,7 +48,7 @@ nav {
 
 /* nav-bar name placeholder */
 .nav-name {
-    flex-basis: 50%;
+    flex: 1 1 50%;
     text-align: left;
 }
 
@@ -63,7 +63,7 @@ nav {
 
 /* nav-bar buttons container */
 .nav-list-items {
-    flex-basis: 45%;
+    flex:1 1 45%;
 }
 
 /* set nav buttons in row => give general styling as well */
@@ -111,30 +111,28 @@ section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;  /** flex-wrap to put title above content when needed (i.e. column direction)*/
-
-    /* aligning content */
     column-gap: 3em;  
 }
 
 /* caption => will be smaller container than content for caption (e.g. About me title vs About me content */
-
-
 #about article:last-child {
     font-size: 1.5rem;
 }
 
 /* main content will be a majority of webpage width */
+/* overflow creates new row */
 article {
-    flex-basis: 65%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    /* gaps between rows and column */
     row-gap: 1em;
     column-gap: 1em;
     
 }
 
-
+/* split row into 2 uneven columns => .uneven-flex is my headline */
 .uneven-flex {
     flex-basis: 20%;
     border-right: solid var(--secondary-color) 3px;
@@ -142,40 +140,37 @@ article {
     padding-right: 2em;
 }
 
+/* my actual content for headlines => will take up most of page  */
 .uneven-content {
     flex-basis: 70%;
 }
 
+/* create container for cards to hold projects */
 .uneven-content > a {
-    flex: 1 1 49%;
+    /* keeps content to the left for last project (if even amount of projects) */
     justify-content: left;
     
 }
 
-.uneven-content > div:last-child {
-    flex-basis: 45%;
-    border: solid green 5px;
-}
 
-.uneven-content .sub-header {
-    text-align: center;
-    flex-basis: 1 1 10em;
-}
-
+/* make first project larger than others */
 article a:first-child {
-    flex-basis: 100%;
+    flex: 1 1 100%;
 }
 
+/* set captions of sections to the right (beside border splitting columns) */
 article h1 {
     width: 100%;
     text-align: right;
 }
+
+/* make cards all the same hight => also create transition effect for hover/focus basic interactions  */
 article > a {
     height: 50vh;
     opacity: 0.5;
+    flex: 1 1 20em;
     transition: 0.3s linear;
     border: solid var(--main-color) 0.5em;
-    
     color: white;
     background-size: cover;
     background-position: center;
@@ -184,55 +179,144 @@ article > a {
 
 }
 
+/* set backgrounds of cards */
 article > a:nth-child(1) {
-    background-image: url('./Assets/expcon.png');
+    background-image: url('https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F60a154235cd05058f9840878%2Fstock-tracking-apps%2F960x0.jpg%3Ffit%3Dscale');
    
 }
 
 article > a:nth-child(2) {
-    background-image: url('./Assets/portfolio.png'); 
+    background-image: url('./Assets/expcon.png');
+   
 }
 
 article > a:nth-child(3) {
+    background-image: url('./Assets/portfolio.png'); 
+}
+
+article > a:nth-child(4) {
     background-image: url('./Assets/dm.png');
    
 }
 
+/* limit width of last card => so it does not grow and supercede first project */
 article > a:last-of-type {
-    border: solid pink 3px;
-    flex-grow: 0;
+    flex-grow: 0.2;
 }
 
-article > a:hover {
+/* change card opacity when hovered or focused  */
+article > a:hover, a:focus {
     opacity: 0.9;
-  
-
 }
 
+/* style project title/technologies used container */
 div div {
     background-color: rgb(44, 164, 164);
     padding: 0.5em 1em;
-    margin-top: 17em;
+    margin-top: 15em;
     width: fit-content;
     justify-self: center;
 }
 
 /* end main content styling */
 
-/* footer styling */
+/* footer styling start */
 footer {
     padding-top: 0;
 }
 
+/* reduce padding and of .uneven-content in the footer */
 footer .uneven-content {
     padding: 0;
     column-gap: 0;
 }
 
+/* implementing properties of contact options */
 footer p {
     flex: 1 1 5em;
     font-size: 1.2rem;
     width: max-content;
+    text-align: center;
+
+}
+
+/* footer styling end */
+
+/* media queries for resizing layout */
+@media screen and (max-width: 1000px) {
+    /** resising width .nav-name and h2 tag with my name in it */
+    .nav-name {
+        flex-basis: 45%;
+    }
+    .nav-name h2 {
+        width: 65%;
+    }
+
+    article > a {
+        flex: 1 1 10em;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    article > a {
+        flex: 1 1 100%;
+    }
+
+    /* set caption and content in column (e.g. Work, sample projects) */
+    section {
+        flex-direction: column;
+        row-gap: 2em;
+    }
+
+    .nav-name {
+        flex-basis: 30%;
+        
+    }
+
+    .nav-name h2 {
+        /* width: 80%; */
+        padding-left: 1em
+
+    }
+
+    .nav-list-items {
+        display: none;
+    }
+
+    /* re-align section titles*/
+    article h1 {
+        text-align: left
+    }
+
+    /* alter properties for .uneven-flex at <= 830px window width */
+    .uneven-flex {
+        border: none;
+        border-bottom: var(--secondary-color) 3px solid;
+        width: max-content;
+        padding-left: 0.5em;
+    }
+
+    article > a:last-child {
+        flex-grow: 1;
+    }
+    main,footer {
+        padding: 1.5em;
+    }
+
+    footer p {
+        /* border: solid pink 10px; */
+        flex: 1 1 10em;;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    main,footer {
+        padding: 0.75em;
+    }
+
+    footer p {
+        flex: 1 1 100%;
+    }
 }
 
 

@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web browser page title -->
     <title>Advanced CSS 02-Homework</title>
+
+    <!-- link stylesheets -->
     <link rel='stylesheet' href='./reset.css'/>
     <link rel='stylesheet' href='./style.css'/>
 </head>
 <body>
+    <!-- define header -->
     <header>
+        <!-- navbar -->
         <nav>
             <section class='nav-name'>
                 <h2>Bemnet Dejene</h2>
             </section>
             <section class='nav-list-items'>
                 <ul>
+                    <!-- navbar links => scroll to sections of page and link to resume in google drive -->
                     <li><a href='#about'>About</a></li>
                     <li><a href="#work">Work</a> </li>
                     <li><a href="#contact-me">Contact Me</a></li>
@@ -25,11 +31,16 @@
         </nav>
     </header>
 
+    <!-- main content -->
     <main>
+        <!-- each section in main split into 2 columns of uneven width -->
         <section id='about'>
+            <!-- smaller width -->
             <article class='uneven-flex'>
                 <h1>About Me</h1>
             </article>
+            
+            <!-- larger width -->
             <article class='uneven-content'>
                 <p>
                     A self driven Software Engineer focusing on the JavaScript stacks like React for Front End Development. Also experienced in Python OOP data analytics.
@@ -37,86 +48,91 @@
             </article>
         </section>
 
+        <!-- projects section -->
         <section id='work'>
             <article class='uneven-flex'>
                 <h1>Work</h1>
             </article>
+
+            <!-- .uneven-content in #work is a project hard => contains link to live version -->
             <article class='uneven-content'>
-
-                <a href='https://focused-heyrovsky-378c47.netlify.app/' target="_blank">
-
-                <div>
-
+                <!-- link to live version => opens new tab-->
+                <a href="https://github.com/bdejene19/mobileStockApp">
                     <div>
-                        <h3>EXP|CON Concert</h3>
-                        <p>
-                            React/JS/CSS/HTML
-                        </p>
+                        <div>
+                            <h3>Mobile Stock App</h3>
+                            <p>
+                                React Native/TypeScript/Redux/WebSockets
+                            </p>
+                        </div>
                     </div>
+                </a> 
+                
+                <a href='https://focused-heyrovsky-378c47.netlify.app/' target="_blank">
+                    <div>
+                        <div>
+                            <!-- project title -->
+                            <h3>EXP|CON Concert</h3>
 
-                    
-                </div>
-            </a>
-            <a href='https://bdejene19.github.io/updatedPortfolio/' target="_blank">
+                            <!-- technologies used -->
+                            <p>
+                                React/JS/CSS/HTML
+                            </p>
+                        </div> 
+                    </div>
+                </a>
 
-                <div>
-
+                <a href='https://bdejene19.github.io/updatedPortfolio/' target="_blank">
+                    <div>
                         <div>
                             <h3>Personal Portfolio</h3>
                             <p>
                                 React/JS/Figma/CSS
                             </p> 
                         </div> 
-                </div> 
-            </a>  
+                    </div> 
+                </a>  
 
-            <a href='https://bdejene19.github.io/updatedPortfolio/' target="_blank">
-                <div>
+                <a href='https://bdejene19.github.io/DigitalMarketingLandPage/' target="_blank">
+                    <div>
                         <div>
                             <h3>Digital Marketing Page</h3>
                             <p>
                                 React/JS/HTML/CSS
                             </p>
                         </div>
-                </div>
-            </a>
-   
-            <a href="#">
-                <div>
-                    <div>
-                        <h3>Mobile Stock App</h3>
-                        <p>
-                            React Native/TypeScript/Redux/WebSockets
-                        </p>
                     </div>
-
-                </div>
-              
-            </a>
-            </a>  
-
+                </a>
+    
+                
             </article>
         </section>
     </main>
 
+    <!-- footer/contact section -->
     <footer id='contact-me'>
         <section class='projects'>
             <article class='uneven-flex'>
                 <h1>Contact Me</h1>
             </article>
+
+            <!-- links will open new webpage if weblink -->
             <article class='uneven-content'>
+                 <!-- cell phone link => can call directly on click -->
                 <p class='sub-header'>
                     <a href="tel:5196193930">📲 519-619-3930</a>
                 </p>
-
+                <!-- mail directly to email via click-->
                 <p class='sub-header'>
                     <a href='mailto:bdejene19@gmail.com'>📧 bdejene19@gmail.com</a>
                 </p>
-
+                
+                <!-- opens github profiles -->
                 <p class='sub-header'>
                     <a href='https://github.com/bdejene19' target="_blank">GitHub</a>
                 </p>
 
+                <!-- opens LinkedIn profile -->
                 <p class='sub-header'>
                     <a href='https://www.linkedin.com/in/bemnet-dejene-8663521b1/' target="_blank">LinkedIn</a>
                 </p>
